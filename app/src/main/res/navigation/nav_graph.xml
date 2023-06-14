@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="tecnm.edu.buho_1.user.HomeFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/crearPublicacionFragment"
+        android:name="tecnm.edu.buho_1.user.PostFragment"
+        android:label="fragment_crear_publicacion"
+        tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/notificacionesFragment"
+        android:name="tecnm.edu.buho_1.user.NotificacionesFragment"
+        android:label="fragment_notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
+    <fragment
+        android:id="@+id/contactosFragment"
+        android:name="tecnm.edu.buho_1.user.ContactsFragment"
+        android:label="fragment_contactos"
+        tools:layout="@layout/fragment_contactos" />
+    <fragment
+        android:id="@+id/miCuentaFragment"
+        android:name="tecnm.edu.buho_1.user.MyCountFragment"
+        android:label="fragment_mi_cuenta"
+        tools:layout="@layout/fragment_mi_cuenta" />
+    <fragment
+        android:id="@+id/notifyFragment"
+        android:name="tecnm.edu.buho_1.user.NotificationsBlankFragment"
+        android:label="fragment_post_blank"
+        tools:layout="@layout/fragment_post_blank" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="tecnm.edu.buho_1.user.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="tecnm.edu.buho_1.user.ViewFragment"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view" />
+</navigation>

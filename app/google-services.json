@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "766342413788",
+    "firebase_url": "https://buho-6d99b-default-rtdb.firebaseio.com",
+    "project_id": "buho-6d99b",
+    "storage_bucket": "buho-6d99b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766342413788:android:6a8861a27dc712f9df6319",
+        "android_client_info": {
+          "package_name": "tecnm.edu.buho_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766342413788-s8oavgm1pet7qvs5l5v9pdmsmba2cg7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tecnm.edu.buho_1",
+            "certificate_hash": "7d758d0b58c3e4f110f388acb1c08892de2ba7b5"
+          }
+        },
+        {
+          "client_id": "766342413788-u13eburqdpukcce2inckq7ehg0lmmd6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfA1NivM5AKL_GUv-dPxeLy0ZCr3yxvpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766342413788-qeovfqouk2rohovrsahfieu4ln31u8uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

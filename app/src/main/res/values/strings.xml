@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">Buhó</string>
+
+    <string name="msjLogin1">¡Hola de nuevo!</string>
+    <string name="msjLogin2">¡Bienvenido, se te ha echado de menos!</string>
+
+    <string name="password">Contraseña</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="reset_password">¿Olvidó su contraseña?</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="google">Continuar con Google</string>
+
+    <string name="noTiene">¿Aún no tienes una cuenta?</string>
+    <string name="tienes">¿Ya tienes una cuenta?</string>
+    <string name="create">Crear cuenta</string>
+    <string name="required">Requerido</string>
+
+    <string name="nomUs">Nombre de usuario</string>
+    <string name="publication">Crear Publicación</string>
+    <string name="ubi">Localización</string>
+    <string name="gal">Fotos</string>
+    <string name="cam">Cámara</string>
+    <string name="choose_category">Seleccionar Categoría:</string>
+    <string name="whats_up">Agregar Descripción</string>
+
+    <string-array name="categories">
+        <item>Ninguna</item>
+        <item>Robos</item>
+        <item>Mascotas Perdidas</item>
+        <item>Extorsión</item>
+        <item>Agresiones</item>
+        <item>Homicidio</item>
+        <item>Secuestro</item>
+    </string-array>
+
+
+    <string name="cruzRoja">Cruz roja</string>
+    <string name="emergencia">Emergencias</string>
+    <string name="proteccion">Protección Civil</string>
+    <string name="seguridadpublica">Seguridad Pública</string>
+    <string name="bomberos">Bomberos</string>
+    <string name="ministerio">Ministerio Público</string>
+
+    <string name="profile">Configuraciones del Perfil</string>
+    <string name="log_out">Salir</string>
+
+    <string name="terminos">Acepto los Términos de Servicio y Política de privacidad.</string>
+    <string name="txt1">Acerca de nuestras políticas</string>
+    <string name="terminos1">Términos y Condiciones de Uso</string>
+
+    <string name="txtReset">Restablecer la contraseña</string>
+    <string name="msgReset0">Ingrese la dirección de correo electrónico verificada de su cuenta
+        de usuario y le enviaremos un enlace para restablecer la contraseña.</string>
+
+    <string name="send">Enviar</string>
+    <string name="update">Actualizar</string>
+    <string name="email">Correo Electrónico</string>
+
+    <string name="notifications">Notificaciones</string>
+    <string name="post">Publicar</string>
+    <string name="summary">Resumen de Actividad</string>
+    <string name="delete">Eliminar Publicación</string>
+    <string name="users">Usuarios</string>
+
+
+    <string name="verify">Verificación de Correo</string>
+    <string name="subtitle_check_email">Para completar su registro. ¡Por favor! verifica su correo y después de clic en continuar.</string>
+    <string name="continue_check_email">Continuar</string>
+
+
+    <string name="user_email">userdefault@gmail.com</string>
+    <string name="user_name">User Default</string>
+    <string name="update_profile">Guardar</string>
+    <string name="all">TODO</string>
+    <string name="delete_account">Eliminar cuenta</string>
+    <string name="change_password">Cambiar contraseña</string>
+    <string name="name">Nombre completo</string>
+    <string name="omit">Omitir</string>
+
+
+    <string name="nick_name">Apodo</string>
+
+    <string name="webclient_id">766342413788-u13eburqdpukcce2inckq7ehg0lmmd6k.apps.googleusercontent.com</string>
+    <string name="todo">TODO</string>
+
+    <string name="fail_connection">No hay conexión a Internet</string>
+    <string name="fail_connection2">Comprueba tu conexión y actualiza la página</string>
+
+
+    <string name="about_this_app">Buhó Versión 1.0.0</string>
+    <string name="admin">Administrador</string>
+    <string name="email_admin">babuhoapp1@gmail.com</string>
+    <string name="contactInfo">Información del contacto</string>
+    <string name="mode">Modo oscuro</string>
+    <string name="main">UNA APLICACIÓN DISEÑADA PARA AYUDAR Y SER AYUDADO. </string>
+    <string name="localization">Default localización</string>
+
+    <string name="permission_required">Se requiere acceso a la cámara para mostrar la vista previa de la cámara.</string>
+    <string name="ok">OK</string>
+    <string name="permission_granted">Ya puedes usar la cámara.</string>
+    <string name="permission_denied">Se requiere permiso para usar la cámara.</string>
+    <string name="title_activity_maps">Mapa</string>
+
+    <string name="actual">Seleccionar ubicación actual</string>
+
+    <string name="default_info_title">Default Location</string>
+    <string name="default_info_snippet">No places found, because location permission is disabled.</string>
+    <string name="option_get_place">Get place</string>
+    <string name="pick_place">Choose a place</string>
+
+
+    <string name="preference">tecnm.edu.PREFERENCE_FILE_KEY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="reply">Respuesta a</string>
+
+    <string name="breakfast_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="comment">Comentar</string>
+
+    <string name="alls">Todas</string>
+    <string name="details">acaba de agregar una nueva publicación</string>
+    <string name="details_2">en la categoría de</string>
+
+    <string name="details_report">acaba de reportar publicación de </string>
+    <string name="details_report2">perteneciente a la categoría de</string>
+
+
+</resources>

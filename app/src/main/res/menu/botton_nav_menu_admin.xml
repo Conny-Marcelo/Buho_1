@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/notificacionesAdmin"
+        android:icon="@drawable/campana"
+        android:title="Notificaciones" />
+
+    <item
+        android:id="@+id/usuariosReportesAdmin"
+        android:icon="@drawable/reporte"
+        android:title="Usuarios" />
+
+    <item
+        android:id="@+id/profileAdminFragment"
+        android:icon="@drawable/perfil"
+        android:title="Mi Cuenta" />
+</menu>

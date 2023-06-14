@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Buho_1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/zafiro</item>
+        <item name="colorPrimaryVariant">@color/piedra</item>
+        <item name="colorOnPrimary">@color/zafiro</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/transparente</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="SplashTheme" parent="Theme.Buho_1">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/zafiro</item>
+        <item name="colorPrimaryVariant">@color/piedra</item>
+        <item name="colorOnPrimary">@color/zafiro</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/transparente</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
+
+    <style name="HintTextStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Theme.MaterialComponents.DayNight.Transparent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/gris</item>
+        <item name="android:windowMinWidthMajor">65%</item>
+        <item name="android:windowMinWidthMinor">95%</item>
+        <item name="android:windowElevation">16dp</item>
+
+    </style>
+
+
+</resources>

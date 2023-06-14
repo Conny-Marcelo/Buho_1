@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_admin"
+    app:startDestination="@id/notificacionesAdmin">
+
+    <fragment
+        android:id="@+id/notificacionesAdmin"
+        android:name="tecnm.edu.buho_1.admin.NotificationsAdmin"
+        android:label="fragment_notificaciones_admin"
+        tools:layout="@layout/fragment_notificaciones_admin" />
+
+    <fragment
+        android:id="@+id/usuariosReportesAdmin"
+        android:name="tecnm.edu.buho_1.admin.UsersReportsAdminFragment"
+        android:label="fragment_usuarios_reportes_admin"
+        tools:layout="@layout/fragment_usuarios_reportes_admin" />
+
+    <fragment
+        android:id="@+id/profileAdminFragment"
+        android:name="tecnm.edu.buho_1.admin.CountAdminFragment"
+        android:label="fragment_count_admin"
+        tools:layout="@layout/fragment_count_admin" />
+
+    <fragment
+        android:id="@+id/notifyFragmentAdmin"
+        android:name="tecnm.edu.buho_1.admin.BlankFragmentAdmin"
+        android:label="fragment_blank_admin"
+        tools:layout="@layout/fragment_blank_admin" />
+    <fragment
+        android:id="@+id/postsFragmentAdmin"
+        android:name="tecnm.edu.buho_1.admin.PostBlankFragmentAdmin"
+        android:label="fragment_post_blank_admin"
+        tools:layout="@layout/fragment_post_blank_admin" />
+    <fragment
+        android:id="@+id/userFragmentAdmin"
+        android:name="tecnm.edu.buho_1.admin.UsersBlankFragmentAdmin"
+        android:label="fragment_users_blank_admin"
+        tools:layout="@layout/fragment_users_blank_admin" />
+
+    <fragment
+        android:id="@+id/deleteAdmin"
+        android:name="tecnm.edu.buho_1.admin.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete" />
+
+</navigation>
