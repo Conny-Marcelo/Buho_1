@@ -46,4 +46,11 @@
         android:name="tecnm.edu.buho_1.user.ViewFragment"
         android:label="fragment_view"
         tools:layout="@layout/fragment_view" />
+
+    <fragment
+        android:id="@+id/adviceFragment"
+        android:name="tecnm.edu.buho_1.user.AdviceFragment"
+        android:label="fragment_advice"
+        tools:layout="@layout/fragment_advice" />
+
 </navigation>

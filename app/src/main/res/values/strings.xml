@@ -125,5 +125,8 @@
     <string name="details_report">acaba de reportar publicación de </string>
     <string name="details_report2">perteneciente a la categoría de</string>
 
+    <string name="details_advice">Publicación eliminada</string>
+    <string name="details_advice2">La publicación fue eliminada, debido a que múltiples reportes. </string>
+
 
 </resources>

@@ -154,17 +154,19 @@ class NotificacionesFragment : Fragment(), NotifyAdapter.OnCardItemClickListener
 
     override fun onCardItemClick(data: String) {
 
-        navController.navigate(R.id.viewFragment)
+        if(data == ""){
 
-        val editor = idPosts.edit()
-        editor.putString("idPost", data)
-        editor.apply()
+            navController.navigate(R.id.adviceFragment)
 
-        //Toast.makeText(context, "idddddd : $data", Toast.LENGTH_SHORT).show()
+        }else{
+            navController.navigate(R.id.viewFragment)
+
+            val editor = idPosts.edit()
+            editor.putString("idPost", data)
+            editor.apply()
+        }
+
        // Toast.makeText(context, "idddddd :  + $data", Toast.LENGTH_SHORT).show()
     }
-
-
-
 
 }
