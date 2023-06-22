@@ -128,5 +128,8 @@
     <string name="details_advice">Publicación eliminada</string>
     <string name="details_advice2">La publicación fue eliminada, debido a que múltiples reportes. </string>
 
+    <string name="details_advice3">Deberás confirmar que este correo electrónico es tuyo. </string>
+    <string name="details_advice4">Usa 8 o más caracteres con una combinación de letras, números y símbolos. </string>
+
 
 </resources>
