@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.bumptech.glide.Glide
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -53,6 +54,7 @@ class DeleteFragment : Fragment() {
         }
 
         idPosts = requireActivity().getSharedPreferences("idDate",Context.MODE_PRIVATE)
+
 
         val post = idPosts.getString("idP","")
 
@@ -115,8 +117,9 @@ class DeleteFragment : Fragment() {
         delete = view.findViewById(R.id.delete_post)
 
         delete.setOnClickListener {
-            delete(documentId)
             dle(documentId)
+            delete(documentId)
+
         }
 
         return view
@@ -152,19 +155,21 @@ class DeleteFragment : Fragment() {
 
     private fun dle(document: String){
         val db = FirebaseFirestore.getInstance()
-        val collectionRef = db.collection("notify")
-        val query = collectionRef.whereEqualTo(document, "idpost")
-        query.get()
-            .addOnSuccessListener { querySnapshot ->
-                for (document in querySnapshot) {
-                    // Borra cada documento encontrado
-                    document.reference.delete()
+        val datoABuscar = document
+        val query = db.collection("notify").whereEqualTo("idpost", datoABuscar)
+        query.get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                for (document in task.result) {
+                    // Aquí es donde se vacía el campo del documento
+                    document.reference.update("idpost", "")
                 }
+            } else {
+                // Maneja cualquier error que pueda ocurrir
+                val exception = task.exception
+                // ...
             }
-            .addOnFailureListener { exception ->
-                // Maneja cualquier error que ocurra
-                Log.e("TAG", "Error al obtener los documentos: $exception")
-            }
+        }
+
 
 
 
