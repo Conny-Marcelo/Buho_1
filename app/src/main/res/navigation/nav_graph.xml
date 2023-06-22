@@ -53,4 +53,10 @@
         android:label="fragment_advice"
         tools:layout="@layout/fragment_advice" />
 
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="tecnm.edu.buho_1.user.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+
 </navigation>

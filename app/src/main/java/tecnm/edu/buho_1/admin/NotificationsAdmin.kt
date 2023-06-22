@@ -36,7 +36,7 @@ class NotificationsAdmin : Fragment(), AdminAdapter.OnItemClickListener {
     private val notifyList = mutableListOf<NotifyAdmin>()
     private lateinit var notifyAdapter: AdminAdapter
 
-    var idP: String? = ""
+    var id: String? = ""
     private lateinit var idPosts: SharedPreferences
 
     @SuppressLint("MissingInflatedId")
@@ -95,13 +95,14 @@ class NotificationsAdmin : Fragment(), AdminAdapter.OnItemClickListener {
         collectionRef.get()
             .addOnSuccessListener { querySnapshot ->
                 for (document in querySnapshot) {
+                    val id = document.id
                     val idP = document.getString("idpost")
                     val nombre = document.getString("nickname")
                     val nReport= document.getString("userReport")
                     val category = document.getString("category")
                     val date = document.getDate("timestamp")
 
-                    val notify= NotifyAdmin(idPost = idP ?: "" ,nickname = nombre ?: "", nameReport =  nReport ?: "", category = category ?: "", timestamp = date)
+                    val notify= NotifyAdmin(idnot = id ?: "",  idPost = idP ?: "" ,nickname = nombre ?: "", nameReport =  nReport ?: "", category = category ?: "", timestamp = date)
 
 
                     notifyList.add(notify)
@@ -122,7 +123,7 @@ class NotificationsAdmin : Fragment(), AdminAdapter.OnItemClickListener {
 
     }
 
-    override fun onItemClick(data: String) {
+    override fun onItemClick(idnot: String, data: String) {
         try {
 
             navController.navigate(R.id.deleteAdmin)
@@ -130,8 +131,9 @@ class NotificationsAdmin : Fragment(), AdminAdapter.OnItemClickListener {
 
             val editor = idPosts.edit()
             editor?.putString("idP", data)
+            editor?.putString("idN", idnot)
             editor?.apply()
-            //Toast.makeText(context, "idddddd :  + $data", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, "idddddd :  + $idnot", Toast.LENGTH_SHORT).show()
 
         }catch (e: Exception) {
             // Manejo de cualquier otra excepción

@@ -93,7 +93,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
+        app:layout_constraintVertical_bias="0.896" />
 
     <Button
         android:id="@+id/sesionIr"
@@ -167,6 +167,19 @@
             tools:layout_editor_absoluteY="144dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/conf_email"
+        android:layout_width="364dp"
+        android:layout_height="16dp"
+        android:text="@string/details_advice3"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtContraseña"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -193,6 +206,19 @@
             tools:layout_editor_absoluteY="270dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/pass_txt"
+        android:layout_width="364dp"
+        android:layout_height="28dp"
+        android:text="@string/details_advice4"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.550"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtConfPass"
         android:layout_width="364dp"
@@ -206,7 +232,7 @@
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936">
+        app:layout_constraintVertical_bias="0.950">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtConfPaswd"
             android:layout_width="match_parent"

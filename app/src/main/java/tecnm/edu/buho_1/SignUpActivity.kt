@@ -142,8 +142,7 @@ class SignUpActivity : AppCompatActivity() {
             val nicknam = binding.txtName.text.toString()
 
             val passwordRegex = Pattern.compile(
-                "(?=.*[-_@#$%^&+=./*()¿?¡!+&=~°<>{};,:])" +     // Al menos 1 carácter especial
-                        ".{6,}"                        // Al menos 4 caracteres
+                "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[-_@#$%^&+=./*()¿?¡!+&=~°<>{};,:]).{8,}$"
             )
 
             if (mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()) {

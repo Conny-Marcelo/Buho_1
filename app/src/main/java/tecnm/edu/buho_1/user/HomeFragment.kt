@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -40,6 +41,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var navController: NavController
 
+    private lateinit var filterBtn : ImageButton
+    private lateinit var moreBtn : ImageButton
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,6 +71,17 @@ class HomeFragment : Fragment() {
         recycler = view.findViewById(R.id.recycleView)
         postRecycler()
 
+        filterBtn = view.findViewById(R.id.fillImage)
+
+        filterBtn.setOnClickListener {
+            navController.navigate(R.id.filterFragment)
+        }
+
+        moreBtn = view.findViewById(R.id.postFast)
+
+        moreBtn.setOnClickListener {
+            navController.navigate(R.id.crearPublicacionFragment)
+        }
 
 
         return view

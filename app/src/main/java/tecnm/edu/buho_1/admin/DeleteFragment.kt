@@ -58,6 +58,10 @@ class DeleteFragment : Fragment() {
 
         val post = idPosts.getString("idP","")
 
+        val not = idPosts.getString("idN","")
+
+        val notId = "$not"
+
         val mNicknameTextView: TextView = view.findViewById(R.id.userName_notify_admin) as TextView
         val mCategoryTextView: TextView = view.findViewById(R.id.chooseTextView_notify_admin) as TextView
         val mLocationTextView: TextView = view.findViewById(R.id.localizationTextView_notify_admin) as TextView
@@ -119,6 +123,7 @@ class DeleteFragment : Fragment() {
         delete.setOnClickListener {
             dle(documentId)
             delete(documentId)
+            delAdminNotify(notId)
 
         }
 
@@ -170,10 +175,26 @@ class DeleteFragment : Fragment() {
             }
         }
 
+    }
 
+    private fun delAdminNotify(document: String){
+        //borrar la notificación completa
+        // enviar el id de la notificación y borrarlo aquí
+        // Obtiene una instancia de FirebaseFirestore
+        val db = FirebaseFirestore.getInstance()
 
+        // Elimina el documento especificado
+        val documentReference = db.collection("notify_report").document(document)
+        documentReference.delete()
+            .addOnSuccessListener {
+                // El documento se eliminó exitosamente
+            }
+            .addOnFailureListener { e ->
+                // Ocurrió un error al intentar eliminar el documento
+            }
 
     }
+
 
 
 }

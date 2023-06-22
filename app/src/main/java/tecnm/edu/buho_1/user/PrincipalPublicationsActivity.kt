@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
@@ -15,6 +16,7 @@ import tecnm.edu.buho_1.databinding.ActivityPrincipalPublicacionesBinding
 class PrincipalPublicationsActivity : AppCompatActivity() {
 
     var MODE_PRIVATE = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

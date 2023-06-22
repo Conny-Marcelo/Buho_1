@@ -16,25 +16,26 @@ import tecnm.edu.buho_1.R
     class AdminAdapter (private val values: List<NotifyAdmin>) : RecyclerView.Adapter<AdminAdapter.NotifyViewHolder>() {
 
         inner class NotifyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+            private val idTextView: TextView = itemView.findViewById(R.id.idPost_admin)
             private val nicknameTextView: TextView = itemView.findViewById(R.id.item_nickname_notify_admin)
             private val repTextView: TextView = itemView.findViewById(R.id.report_nickname_notify_admin)
             private val catTextView: TextView = itemView.findViewById(R.id.item_categories_admin)
             private val dateTextView: TextView = itemView.findViewById(R.id.item_date_notify_admin)
-            private val idTextView: TextView = itemView.findViewById(R.id.idPost_admin)
             private val cardView: CardView = itemView.findViewById(R.id.card_notify_admin)
 
 
             fun bind(notify: NotifyAdmin) {
+                idTextView.text = notify.idPost
                 nicknameTextView.text = notify.nickname
                 repTextView.text = notify.nameReport
                 catTextView.text = notify.category
                 dateTextView.text = notify.timestamp.toString()
-                idTextView.text = notify.idPost
 
-                // Manejar el evento de clic en el CardView
+                    // Manejar el evento de clic en el CardView
                 cardView.setOnClickListener {
+                    val cardId = notify.idnot
                     val datoEspecifico = notify.idPost
-                    onCardItemClickListener.onItemClick(datoEspecifico)
+                    onCardItemClickListener.onItemClick(cardId,datoEspecifico)
 
                 }
 
@@ -43,7 +44,7 @@ import tecnm.edu.buho_1.R
         }
 
         interface OnItemClickListener {
-            fun onItemClick(data: String)
+            fun onItemClick(cardId: String, data: String)
         }
 
         private lateinit var onCardItemClickListener: OnItemClickListener
@@ -63,7 +64,7 @@ import tecnm.edu.buho_1.R
             val comm = values[position]
             holder.bind(comm)
             holder.itemView.setOnClickListener {
-                onCardItemClickListener.onItemClick(comm.idPost)
+                onCardItemClickListener.onItemClick(comm.idnot, comm.idPost )
             }
         }
 
