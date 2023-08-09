@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
 
         val valor = idWatch_1.getString("idWatch1","")
 
-        Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
 
         val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.fragment_home)
 
