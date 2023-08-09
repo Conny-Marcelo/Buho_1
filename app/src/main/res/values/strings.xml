@@ -23,6 +23,25 @@
     <string name="choose_category">Seleccionar Categoría:</string>
     <string name="whats_up">Agregar Descripción</string>
 
+    <string name="watch">¿Quién puede ver tu publicación?</string>
+    <string name="watch_1">Seguridad Pública</string>
+    <string name="watch_2">Guardia Nacional</string>
+    <string name="watch_3">Ministerio Público</string>
+    <string name="watch_4">Cruz Roja</string>
+    <string name="watch_5">Protección Civil</string>
+    <string name="watch_6">Bomberos</string>
+    <string name="watch_7">Ver todo</string>
+
+    <string-array name="categories_watch">
+        <item>Seguridad Pública</item>
+        <item>Guardia Nacional</item>
+        <item>Ministerio Público</item>
+        <item>Cruz Roja</item>
+        <item>Protección Civil</item>
+        <item>Bomberos</item>
+    </string-array>
+
+
     <string-array name="categories">
         <item>Ninguna</item>
         <item>Robos</item>
@@ -131,6 +150,9 @@
 
     <string name="details_advice3">Deberás confirmar que este correo electrónico es tuyo. </string>
     <string name="details_advice4">Usa 8 o más caracteres con una combinación de letras, números y símbolos. </string>
+
+    <string name="details_advice5">Filtrar</string>
+
 
 
 </resources>

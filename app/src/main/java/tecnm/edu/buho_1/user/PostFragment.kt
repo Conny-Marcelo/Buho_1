@@ -76,6 +76,7 @@ class PostFragment : Fragment() {
 
     var nickname: String = ""
     var item: String = ""
+    var watch: String = ""
     var description: String = ""
     lateinit var imageBitmap: Bitmap
     var selectedImageUri: Uri? = null
@@ -156,7 +157,7 @@ class PostFragment : Fragment() {
         nicknameUserTextView = paychartview.findViewById(R.id.userName)
         auth = FirebaseAuth.getInstance()
 
-        // spinner y nombre de usuario
+        // spinner categoria y nombre de usuario
         val spinner = paychartview.findViewById<Spinner>(R.id.spinner_categories)
 
         spinner?.adapter = activity?.let {
@@ -181,6 +182,32 @@ class PostFragment : Fragment() {
                 //..
             }
         }
+        //spinner quien puede ver
+        val spinner2 = paychartview.findViewById<Spinner>(R.id.spinner_watch)
+
+        spinner2?.adapter = activity?.let {
+            ArrayAdapter.createFromResource(
+                it,
+                R.array.categories_watch,
+                R.layout.spinner_item
+            )
+        } as SpinnerAdapter
+        spinner2?.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                watch = parent?.getItemAtPosition(position).toString()
+            }
+        }
+
+
         //Descripción del post
         descriptionEditText = paychartview.findViewById(R.id.editTextDescription)
 
@@ -219,6 +246,7 @@ class PostFragment : Fragment() {
                         val data = hashMapOf(
                             "nickname" to nickname,
                             "category" to item,
+                            "share" to watch,
                             "location" to address,
                             "description" to description,
                             "timestamp" to FieldValue.serverTimestamp(),

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
@@ -44,6 +45,8 @@ class HomeFragment : Fragment() {
     private lateinit var filterBtn : ImageButton
     private lateinit var moreBtn : ImageButton
 
+    private lateinit var idWatch_1: SharedPreferences
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,6 +64,12 @@ class HomeFragment : Fragment() {
             navController.navigate(R.id.homeFragment)
         }
 
+        idWatch_1 = requireActivity().getSharedPreferences("Watch",Context.MODE_PRIVATE)
+
+        val valor = idWatch_1.getString("idWatch1","")
+
+        Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
+
         val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.fragment_home)
 
         swipeRefreshLayout.setOnRefreshListener {
@@ -76,13 +85,6 @@ class HomeFragment : Fragment() {
         filterBtn.setOnClickListener {
             navController.navigate(R.id.filterFragment)
         }
-
-        moreBtn = view.findViewById(R.id.postFast)
-
-        moreBtn.setOnClickListener {
-            navController.navigate(R.id.crearPublicacionFragment)
-        }
-
 
         return view
     }
