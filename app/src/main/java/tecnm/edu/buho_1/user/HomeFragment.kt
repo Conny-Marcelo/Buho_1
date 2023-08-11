@@ -2,6 +2,7 @@ package tecnm.edu.buho_1.user
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -25,6 +26,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -37,6 +40,9 @@ import tecnm.edu.buho_1.R
 class HomeFragment : Fragment() {
 
     private val listPosts:MutableList<Item> = ArrayList()
+    private val filteredDataList: MutableList<Item> = mutableListOf()
+
+    private lateinit var adapter: PostViewAdapter
 
     private lateinit var recycler: RecyclerView
 
@@ -68,7 +74,8 @@ class HomeFragment : Fragment() {
 
         val valor = idWatch_1.getString("idWatch1","")
 
-        //Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
+        var valorDelTipo = "$valor"
+        Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
 
         val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.fragment_home)
 
@@ -78,15 +85,64 @@ class HomeFragment : Fragment() {
         }
 
         recycler = view.findViewById(R.id.recycleView)
-        postRecycler()
+        //postRecycler()
 
         filterBtn = view.findViewById(R.id.fillImage)
+
+        if (valorDelTipo=="Todo"){
+            valorDelTipo = ""
+        }
+
+            if (valorDelTipo!=null && valorDelTipo.isNotEmpty()){
+                filtrar(valorDelTipo)
+            }else{
+                postRecycler()
+            }
 
         filterBtn.setOnClickListener {
             navController.navigate(R.id.filterFragment)
         }
 
         return view
+    }
+
+    private fun filtrar(valor: String){
+        recycler.setHasFixedSize(true)
+        recycler.itemAnimator = DefaultItemAnimator()
+        recycler.layoutManager = LinearLayoutManager(context)
+        listPosts.clear()
+        val db = Firebase.firestore
+        db.collection("posts").whereEqualTo("share", valor)
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val mPost =
+                        Item(document.id,
+                            document.getString("nickname"),
+                            document.getString("category"),
+                            document.getString("location"),
+                            document.getString("share"),
+                            document.getDate("timestamp"),
+                            document.getString("description"),
+                            document.getString("url"))
+                    mPost.let {
+
+                        listPosts.add(it)
+                    }
+                    //Toast.makeText(requireContext(), mPost.toString(), Toast.LENGTH_LONG).show()
+                }
+                //Toast.makeText(requireContext(), listPosts.size.toString(), Toast.LENGTH_LONG).show()
+                ordenarPorFechaDescendente(listPosts)
+
+                val adaptador = PostViewAdapter(listPosts)
+                recycler.adapter = adaptador
+
+                //recycler.adapter = PostViewAdapter(listPosts)
+
+            }
+            .addOnFailureListener { exception ->
+
+            }
     }
 
     private fun postRecycler(){
@@ -105,6 +161,7 @@ class HomeFragment : Fragment() {
                             document.getString("nickname"),
                             document.getString("category"),
                             document.getString("location"),
+                            document.getString("share"),
                             document.getDate("timestamp"),
                             document.getString("description"),
                             document.getString("url"))
@@ -129,7 +186,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    class PostViewAdapter(private val values: List<Item>) :
+    class PostViewAdapter(private var values: List<Item>) :
         RecyclerView.Adapter<PostViewAdapter.ViewHolder>() {
 
         private lateinit var buttonReport: Button
@@ -147,7 +204,6 @@ class HomeFragment : Fragment() {
 
             return ViewHolder(view)
         }
-
 
 
         @SuppressLint("SetTextI18n")
@@ -247,6 +303,11 @@ class HomeFragment : Fragment() {
         }
 
         // Método para ordenar los elementos por fecha más reciente
+
+        fun actualizarDatos(nuevasPublicaciones: List<Item>) {
+            values = nuevasPublicaciones
+            notifyDataSetChanged()
+        }
 
     }
     private fun ordenarPorFechaDescendente(lista: MutableList<Item>) {
