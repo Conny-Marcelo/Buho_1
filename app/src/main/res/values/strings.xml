@@ -31,6 +31,11 @@
     <string name="watch_5">Protección Civil</string>
     <string name="watch_6">Bomberos</string>
     <string name="watch_7">Ver todo</string>
+    <string name="watch_8">Robos</string>
+    <string name="watch_9">Mascotas Perdidas</string>
+    <string name="watch_10">Objetos Perdidos</string>
+    <string name="watch_11">Extorsión</string>
+    <string name="watch_12">Agresiones</string>
 
     <string-array name="categories_watch">
         <item>Seguridad Pública</item>

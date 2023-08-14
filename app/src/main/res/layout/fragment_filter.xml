@@ -139,7 +139,97 @@
         app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.405" />
+
+    <Button
+        android:id="@+id/btnRobos"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/black"
+        android:text="@string/watch_8"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/piedra"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
+
+    <Button
+        android:id="@+id/btnPet"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/black"
+        android:text="@string/watch_9"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/piedra"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537" />
+
+    <Button
+        android:id="@+id/btnObject"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/black"
+        android:text="@string/watch_10"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/piedra"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604" />
+
+    <Button
+        android:id="@+id/btnExt"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/black"
+        android:text="@string/watch_11"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/piedra"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <Button
+        android:id="@+id/btnAgresion"
+        android:layout_width="173dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/black"
+        android:text="@string/watch_12"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/piedra"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
 
     <Button
         android:id="@+id/all"

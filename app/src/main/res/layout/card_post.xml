@@ -59,8 +59,22 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="65dp"
             android:layout_marginTop="20dp"
+            android:textColor="@color/colorCat"
             android:fontFamily="@font/regular"
             android:text="Categoría"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/regular"
+            android:text="¿Quién puede ver?"
             android:textSize="12sp"
             android:textStyle="bold" />
 

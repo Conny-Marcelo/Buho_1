@@ -49,8 +49,6 @@ class HomeFragment : Fragment() {
     private lateinit var navController: NavController
 
     private lateinit var filterBtn : ImageButton
-    private lateinit var moreBtn : ImageButton
-
     private lateinit var idWatch_1: SharedPreferences
 
     override fun onCreateView(
@@ -75,7 +73,8 @@ class HomeFragment : Fragment() {
         val valor = idWatch_1.getString("idWatch1","")
 
         var valorDelTipo = "$valor"
-        Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
+
+        //Toast.makeText(context, "el valor es : " + valor, Toast.LENGTH_SHORT).show()
 
         val swipeRefreshLayout: SwipeRefreshLayout = view.findViewById(R.id.fragment_home)
 
@@ -91,11 +90,13 @@ class HomeFragment : Fragment() {
 
         if (valorDelTipo=="Todo"){
             valorDelTipo = ""
+        }else{
+            filtraCat(valorDelTipo)
         }
 
             if (valorDelTipo!=null && valorDelTipo.isNotEmpty()){
                 filtrar(valorDelTipo)
-            }else{
+            }else {
                 postRecycler()
             }
 
@@ -113,6 +114,45 @@ class HomeFragment : Fragment() {
         listPosts.clear()
         val db = Firebase.firestore
         db.collection("posts").whereEqualTo("share", valor)
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val mPost =
+                        Item(document.id,
+                            document.getString("nickname"),
+                            document.getString("category"),
+                            document.getString("location"),
+                            document.getString("share"),
+                            document.getDate("timestamp"),
+                            document.getString("description"),
+                            document.getString("url"))
+                    mPost.let {
+
+                        listPosts.add(it)
+                    }
+                    //Toast.makeText(requireContext(), mPost.toString(), Toast.LENGTH_LONG).show()
+                }
+                //Toast.makeText(requireContext(), listPosts.size.toString(), Toast.LENGTH_LONG).show()
+                ordenarPorFechaDescendente(listPosts)
+
+                val adaptador = PostViewAdapter(listPosts)
+                recycler.adapter = adaptador
+
+                //recycler.adapter = PostViewAdapter(listPosts)
+
+            }
+            .addOnFailureListener { exception ->
+
+            }
+    }
+
+    private fun filtraCat(valor: String){
+        recycler.setHasFixedSize(true)
+        recycler.itemAnimator = DefaultItemAnimator()
+        recycler.layoutManager = LinearLayoutManager(context)
+        listPosts.clear()
+        val db = Firebase.firestore
+        db.collection("posts").whereEqualTo("category", valor)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
@@ -213,6 +253,7 @@ class HomeFragment : Fragment() {
             holder.mNicknameTextView.text = mPost.nickname
             holder.mCategoryTextView.text = mPost.category
             holder.mLocationTextView.text = mPost.location
+            holder.mShareTextView.text = mPost.share
             holder.mTimestampTextView.text = mPost.timestamp.toString()
             holder.mDescriptionTextView.text = mPost.description
             holder.mPosterImageView.let {
@@ -295,8 +336,9 @@ class HomeFragment : Fragment() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val mNicknameTextView: TextView = view.findViewById(R.id.item_nickname) as TextView
-            val mCategoryTextView: TextView = view.findViewById(R.id.item_category) as TextView
-            val mLocationTextView: TextView = view.findViewById(R.id.item_location) as TextView
+            val mCategoryTextView: TextView = view.findViewById(R.id.item_location) as TextView
+            val mLocationTextView: TextView = view.findViewById(R.id.item_share) as TextView
+            val mShareTextView: TextView = view.findViewById(R.id.item_category) as TextView
             val mTimestampTextView: TextView = view.findViewById(R.id.item_date) as TextView
             val mDescriptionTextView: TextView = view.findViewById(R.id.item_description) as TextView
             val mPosterImageView: ImageView = view.findViewById(R.id.item_image) as ImageView

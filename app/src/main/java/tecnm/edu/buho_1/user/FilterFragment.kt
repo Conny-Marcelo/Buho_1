@@ -25,8 +25,15 @@ class FilterFragment : Fragment() {
     private lateinit var watch_6: Button
     private lateinit var watch_7: Button
 
+    private lateinit var watch_8: Button
+    private lateinit var watch_9: Button
+    private lateinit var watch_10: Button
+    private lateinit var watch_11: Button
+    private lateinit var watch_12: Button
+
 
     private lateinit var idWatch_1: SharedPreferences
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -109,6 +116,56 @@ class FilterFragment : Fragment() {
             val watch7 = "Todo"
             val editor = idWatch_1.edit()
             editor.putString("idWatch1", watch7)
+            editor.apply()
+
+            onBackPressed()
+        }
+
+        watch_8 = view.findViewById(R.id.btnRobos)
+        watch_8.setOnClickListener {
+            val watch8 = "Robos"
+            val editor = idWatch_1.edit()
+            editor.putString("idWatch1",watch8)
+            editor.apply()
+
+            onBackPressed()
+        }
+
+        watch_9 = view.findViewById(R.id.btnPet)
+        watch_9.setOnClickListener {
+            val watch9 = "Mascotas Perdidas"
+            val editor = idWatch_1.edit()
+            editor.putString("idWatch1",watch9)
+            editor.apply()
+
+            onBackPressed()
+        }
+
+        watch_10 = view.findViewById(R.id.btnObject)
+        watch_10.setOnClickListener {
+            val watch10 = "Objetos Perdidos"
+            val editor = idWatch_1.edit()
+            editor.putString("idWatch1",watch10)
+            editor.apply()
+
+            onBackPressed()
+        }
+
+        watch_11 = view.findViewById(R.id.btnExt)
+        watch_11.setOnClickListener {
+            val watch11 = "Extorsión"
+            val editor = idWatch_1.edit()
+            editor.putString("idWatch1",watch11)
+            editor.apply()
+
+            onBackPressed()
+        }
+
+        watch_12 = view.findViewById(R.id.btnAgresion)
+        watch_12.setOnClickListener {
+            val watch12 = "Agresiones"
+            val editor = idWatch_1.edit()
+            editor.putString("idWatch1",watch12)
             editor.apply()
 
             onBackPressed()
