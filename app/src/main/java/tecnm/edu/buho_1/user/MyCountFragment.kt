@@ -1,11 +1,13 @@
 package tecnm.edu.buho_1.user
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Switch
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -23,6 +25,7 @@ class MyCountFragment : Fragment() {
 
     private lateinit var emailUserTextView: TextView
     private lateinit var nicknameUserTextView: TextView
+    private lateinit var question: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,6 +79,14 @@ class MyCountFragment : Fragment() {
             }
             editor.commit()
             ma.setDayNight()
+        }
+
+        question = view.findViewById(R.id.question)
+        question.setOnClickListener {
+            val url = "https://drive.google.com/file/d/1u28DyMXpba0eor6On7QISWFfZFeKUdKA/view?usp=drive_link" // Reemplaza con el enlace deseado
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
 
         return view
